@@ -1,0 +1,4 @@
+Downloads/Code.inpy filter=lfs diff=lfs merge=lfs -text
+Downloads/Code.ipynb filter=lfs diff=lfs merge=lfs -text
+Downloads/Code filter=lfs diff=lfs merge=lfs -text
+*ipynb filter=lfs diff=lfs merge=lfs -text
