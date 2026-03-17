@@ -1,14 +1,11 @@
-
 # Few-shot Learning with Siamese Networks
 
 **Course Project at VUB – Vrije Universiteit Brussel**  
-This project was completed as part of a course assignment and done collaboratively by a team of 3 students. 
+Collaborative project completed by a team of three students.
 
 ---
 
-## Contributions 
-Update the table below to indicate who did what:
-
+## Contributions
 | Student | Contribution |
 |---------|-------------|
 | Rawan Kazma | TBD |
@@ -18,53 +15,52 @@ Update the table below to indicate who did what:
 ---
 
 ## Project Overview
-Few-shot learning aims to detect and recognize **novel, unseen images** using only a few annotated examples, after training on a larger dataset. This project implements a **Siamese network**, a deep learning architecture with two identical sub-networks that share parameters. The network learns a **similarity function** rather than a classification function, distinguishing whether images are from the same class or different classes.  
+Implemented a **Siamese network** for **few-shot learning** to recognize novel, unseen images using only a few examples. The network learns a **similarity function** to compare images and determine if they belong to the same class, using both **contrastive** and **triplet losses**.  
 
-The network is trained end-to-end using a **contrastive loss** and a **triplet loss**, encouraging embeddings of similar images to be close and dissimilar images to be far apart. During inference, a query image is compared with a support set to find the most similar image.
-
----
-
-## Dataset
-- **Mini-ImageNet**: Subset of ImageNet with 60,000 images (50K train, 10K test) across 100 classes.  
-- Images are 224x224 pixels.  
-- Predefined train/test splits are used.  
+Key outcomes:  
+- Successfully trained the network on **Mini-ImageNet** (100 classes, 224x224 images).  
+- Designed a **custom CNN architecture** for embeddings.  
+- Evaluated on multiple **n-way k-shot scenarios**, demonstrating accurate few-shot recognition.  
+- Applied **visualization techniques** (PCA, t-SNE) and **GradCAM** for model interpretability.
 
 ---
 
-## Architecture
-- **Custom Siamese Network**:
-  - Single CNN network processes image pairs/triplets.
-  - Produces feature embeddings per image.
-  - Distance metrics (cosine similarity or Euclidean) are used to compute similarity.
-  - Both **contrastive loss** and **triplet loss** are implemented from scratch.  
-
+## Architecture & Approach
+- **Custom Siamese CNN**:
+  - Processes image pairs/triplets to generate embeddings.
+  - Distance metrics (cosine similarity / Euclidean) used to compute similarity.  
 - **Inference**:
-  - Input a novel query image + support set.
-  - Output: the most similar image in the support set.
-
-- **Visualization**:
-  - PCA or t-SNE used to show that embeddings of similar classes are closer.
-  - Explainable AI tools (e.g., GradCAM) to understand model decisions.
+  - Input: novel query image + support set.  
+  - Output: most similar image in support set.  
+- **Model Analysis & Visualization**:
+  - Embeddings visualized with PCA/t-SNE.  
+  - GradCAM used to interpret model decisions.
 
 ---
 
-## Evaluation & Analysis
-- Evaluate on **n-way k-shot** scenarios:
-  - Example: 5-way 1-shot, 5-way 4-shot, 5-way 8-shot, 5-way 16-shot.
-- Metrics:
-  - **Top-1 / Top-5 accuracy**
-  - **Mean Average Precision (mAP)** using similarity scores
-- 20 random query images sampled from test set for evaluation.
-- Visualize embeddings and model behavior using GradCAM or similar tools.
+## Evaluation
+- Tested on **n-way k-shot tasks** (e.g., 5-way 1-shot, 5-way 4-shot, 5-way 8-shot, 5-way 16-shot).  
+- Metrics computed:
+  - **Top-1 / Top-5 accuracy**  
+  - **Mean Average Precision (mAP)** based on similarity scores  
+- Demonstrated that similar class embeddings cluster together and dissimilar ones are separated.
 
 ---
 
 ## Baselines
-- **Custom Siamese Networks**: contrastive loss & triplet loss  
-- **Pretrained ResNet18 Siamese Networks**:
-  - Finetuned on mini-ImageNet
-  - Compared with a ResNet18 trained on Places365
-- Evaluation done on mini-ImageNet test set to avoid data leakage.
+- Compared **custom Siamese networks** with **pretrained ResNet18-based Siamese networks**.  
+- Finetuned ResNet18 models on Mini-ImageNet and Places365 for comparison.  
+- Evaluated consistently on Mini-ImageNet test set to avoid data leakage.
+
+---
+
+## Skills & Techniques Demonstrated
+- Few-shot learning & Siamese networks  
+- CNN architecture design and embedding learning  
+- Custom implementation of **contrastive** and **triplet losses**  
+- Model evaluation in multiple n-way k-shot scenarios  
+- Visualization & interpretability with PCA, t-SNE, GradCAM  
+- Working with large datasets (Mini-ImageNet) and PyTorch/Colab  
 
 ---
 
