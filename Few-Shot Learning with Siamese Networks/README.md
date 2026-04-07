@@ -1,16 +1,40 @@
 # Few-shot Learning with Siamese Networks
 
 **Course Project at VUB – Vrije Universiteit Brussel**  
-Collaborative project completed by a team of three students.
+Collaborative project completed by a team of three
 
 ---
 
 ## Contributions
 | Student | Contribution |
 |---------|-------------|
-| Rawan Kazma | TBD |
-| Elly Delaplace | TBD |
-| Nicolas Xanthakis | TBD |
+| Rawan Kazma | Custom Siamese CNN design, training loop logic, trained for contrastive & triplet loss, checkpoints, learning curves, Grad-CAM, evaluation logic & t-SNE, convergence analysis, final ResNet model,  contrastive learning analysis over both architectures|
+| Elly Delaplace | Image preprocessing, initial ResNet baseline design, training, triplet visualization, evaluation pipeline | PCA 
+| Nikolas Xanthakis | Loss function implementation (contrastive & triplet), initial ResNet training with triplet loss, model evaluation |
+
+---
+
+### Rawan
+- Designed and implemented the **custom CNN Siamese encoder architecture**
+- Developed and applied **transform strategies** for both the custom encoder and ResNet
+- Coded and trained the **custom CNN using contrastive learning**, including learning curve construction and **convergence /generalization analysis**  
+- Implemented checkpoints to support longer training sessions and efficient curve generation   
+- Wrote the training loop logic and trained models using contrastive and triplet loss  
+- Conducted **three experiments with convergence analysis to fine-tune the initial ResNet pretrained architecture after it overfit** and trained the final reported model
+- Contributed to the evaluation pipeline including **t-SNE** plots  
+- Implemented explainable AI visualizations using **Grad-CAM** plots
+
+### Elly
+- Preprocessed images, including resizing and managing annotations
+- Developed the **initial ResNet baseline architecture** and performed initial fine-tuning
+- Trained the initial ResNet model
+- Added **triplet visualizations** to inspect embeddings  
+- Constructed the **evaluation pipeline** including **PCA plots** and assessment
+
+### Nikolas
+- Implemented **contrastive and triplet loss functions** along with supporting utilities for train, test and validation
+- Worked on the **initial ResNet architecture** and trained it with **triplet loss** 
+- finetuned the **triplet-loss-based model** and contributed to evaluation of embedding qualit
 
 ---
 
